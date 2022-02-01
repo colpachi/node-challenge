@@ -1,0 +1,16 @@
+{
+  "name": "fuerza-test-api",
+  "version": "1.0.0",
+  "description": "simple node api",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon src/app.js"
+  },
+  "author": "Murilo Colpachi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "mongoose": "^6.1.8",
+    "nodemon": "^2.0.15"
+  }
+}
