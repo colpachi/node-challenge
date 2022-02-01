@@ -8,8 +8,13 @@ class PostController {
 
     // lista todos os posts
     async index(req, res) {
-        const posts = await Post.find()
-        return res.json(posts)
+
+        const {page = 1,perPage = 1} = req.query
+        const total = (await Post.find()).length
+
+        const paginatedPosts = await Post.find().limit(perPage).skip((page - 1) * perPage)
+
+        return res.json({total,data:paginatedPosts})
     }
 
     //cria um post
