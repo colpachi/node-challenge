@@ -56,7 +56,7 @@ class PostController {
     }
 
     //deleta um post
-    //Nativamente o Mongoose já possui um método findByIdAndUpdate
+    //Nativamente o Mongoose já possui um método findByIdAndDelete
     async delete(req, res) {
 
         try {

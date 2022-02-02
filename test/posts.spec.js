@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const request = require('supertest');
 
 const { app } = require('../src/app');
-const Post = require('../src/models/Post');
+const Post = require('../src/models/post');
 
 const { createMockPosts } = require('./mocks/posts');
 
@@ -10,9 +10,10 @@ jest.setTimeout(15 * 1000);
 
 describe('Post', () => {
   beforeAll(async () => {
-    await mongoose.connect(
-      ''
-    );
+
+    const { MONGO_HOST, MONGO_PORT, MONGO_DATABASE } = process.env;
+
+    await mongoose.connect(`mongodb://${MONGO_HOST}:${MONGO_PORT}/${MONGO_DATABASE}?retryWrites=true&w=majority`)
   });
   beforeEach(async () => {
     await Post.deleteMany({});
@@ -32,7 +33,7 @@ describe('Post', () => {
     expect(response.body.data.length).toBe(10);
   });
 
-   test('should return a list of posts paginated', async () => {
+  test('should return a list of posts paginated', async () => {
     const lenPosts = 100;
     await Post.insertMany(createMockPosts(lenPosts));
     const page = 3;
