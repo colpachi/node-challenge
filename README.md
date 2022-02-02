@@ -1,90 +1,85 @@
-# Backend Challenge
 
-The project is a simple challenge to test your skills in building APIs using the Node.js framework.
 
-### Submission
+<h3 align="center">
+  Fuerza API 
+</h3>
 
-- [ ] Read the description, requirements, and the others instructions
 
-### What to do
 
-- Create a simple API to manage the system of posts (CRUD).
 
-**This API should allow to:**
 
-| Method | Name | Route |
-| ------ | ------ | ------ |
-| POST | Create Post | /api/posts |
-| GET | Listing Posts | /api/posts |
-| GET | Get Post By ID | /api/posts/:id |
-| PUT | Edit Post | /api/posts/:id |
-| DELETE | Delete Post | /api/posts/:id |
+## :computer: About the project
 
-**The post must have the following fields:**
+This api provides a simulation of post request, listing all posts or a unique one, update a post, delete a post and is the result of a node-challenge provided by Fuerza Studio @fuerzastudio.
 
-| Field | Type |
-| ------ | ------ |
-| id | UUID |
-| title | string |
-| body | string |
-| tags | string[] |
+
+## 🚀 Technologies
+
+Technologies that I used to develop this api
+
+- [Node.js](https://nodejs.org/en/)
+- [Express](https://expressjs.com/pt-br/)
+- [Mongoose](https://mongoosejs.com/)
+- [Swagger](https://swagger.io/)
+- [Jest](https://jestjs.io/)
+- [SuperTest](https://github.com/visionmedia/supertest)
+
+
+
+## :dart: Getting started
 
 ### Requirements
 
-- [ ] All API responses must be in JSON format.
-- [ ] Add pagination on the API for the listing of the posts
-- [ ] Provide the unit testing for all routes using Mocha and Chai or your preferred testing framework.
-- [ ] Provide documentation for all routes, we preferer using Swagger API, but you can using README for documentation.
-- [ ] Provide a README file with usage instructions (how to the runs, considerations, etc...).
-- [ ] Use naming written as camelCase by convention.
+- [Node.js](https://nodejs.org/en/)
+- [Yarn](https://classic.yarnpkg.com/) or [npm](https://www.npmjs.com/)
 
-#### - **The folders structures of the project should be following the example below.**
 
-```sh
-├── src
-│   ├── controllers
-│   │   └── posts
-│   ├── helpers
-│   │   └── utils.js
-│   ├── models
-│   │   └── post.js
-│   ├── routes
-│   │   └── api
-│   │       ├── posts.js
-│   │       └── index.js
-│   └── app.js
-├── test
-│   └── posts
-├── .editorconfig
-├── .gitignore
-├── package.json
-└── readme.md
+**Clone the project and access the folder**
+
+```bash
+$ git clone https://github.com/colpachi/node-challenge.git && cd fuerza-api
 ```
 
-#### Any routes should process the response in the controllers, no use function directly in the routes.
+**Follow the steps below**
 
-- See example below
+```bash
+# Install the dependencies
+$ npm install
 
-![basic structure](https://i.imgur.com/lyRSYj8.png)
+# Make a copy of '.env.example' to '.env'
+# and set with YOUR environment variables.
+$ cp .env.example .env
 
-### Data Persistence
+# Create the instance of mongoDB using docker
+$ docker run --name fuerza-api -p 27017:27017 -d -t mongo
 
-- [ ] You will need to persist the data in some way, maybe in memory.
-- [ ] You don't need to use any external data persistence (database, cache, etc.), and the easier it is for us to run it, is better.
+# make sure the services are running
+$ docker container ps
 
-### Evaluation
+# To finish, run the api service
+$ npm start
 
-- [ ] Architecture
-- [ ] Automated tests
-- [ ] Functionalities of the APIs
-- [ ] Programming good practices
-- [ ] Project organization
-- [ ] Structure componentization
-- [ ] Clean code with camelcase pattern
+# Well done, you should be good to go!
+```
 
-### Bonus Level Up
+## :gem: Final considerations
 
-- [ ] Authenticated the routes using JWT
-- [ ] Process and validate the data that the API receives before creating the post.
-- [ ] Using MongoDB for storage data
-- [ ] Using Swagger API documentation
+- You can choose your best api software tool, we recommend postman for the route testing.
+
+- For the tests please run: 
+
+```bash
+npm test
+```
+
+- You can always search the documentation available in docs folder to get in touch with the operations available in this api. Please access: 
+
+```bash
+http://localhost:3000/docs/
+```
+
+Enjoy!
+
+ 
+
+Made with :hearts: &nbsp;by Murilo Colpachi 👋 &nbsp;[Here is my linkedin](https://www.linkedin.com/in/murilo-colpachi-b3275190/)
